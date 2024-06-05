@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from "react";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import RoutesConfig from "./src/route";
+import RoutesConfig from "./src/route/route";
 
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
@@ -31,9 +31,7 @@ export default function App() {
   }, [loadResourcesAndDataAsync]);
 
   if (!fontsLoaded && !fontError) {
-    return null; 
+    return null;
   }
-  return (
-    <RoutesConfig></RoutesConfig>
-  );
+  return <RoutesConfig></RoutesConfig>;
 }
